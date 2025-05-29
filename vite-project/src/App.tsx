@@ -251,7 +251,7 @@ function App() {
                 <div className="p-4 flex flex-col items-center h-[400px]">
                   <div className="bg-gray-500 text-gray-300 px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">Personal Project</div>
                   <a
-                    href="https://github.com/JasonNguyen067/Jays_portfolio"
+                    href="https://github.com/JasonNguyen067/Jasons-Portfolio"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 mb-4"
