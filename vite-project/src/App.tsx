@@ -299,7 +299,7 @@ function App() {
           </div>
         </div>
 
-        {/* Contact Me Section */}
+        {/* Contact Me Section 
         <div className="text-center w-full max-w-[600px] mx-auto mb-40 mt-400">
           <h2 className="text-3xl font-bold mb-8">Contact Me</h2>
           <h3 className="text-xl font-bold mb-8">Schedule me for a coffee chat!</h3>
@@ -326,7 +326,7 @@ function App() {
               Send Message
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
