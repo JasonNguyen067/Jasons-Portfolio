@@ -277,8 +277,9 @@ function App() {
         <div className="text-center w-full max-w-[600px] mx-auto mb-40 mt-400">
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
           <p className="text-gray-300 text-xl">
-            My favorite hobbies are playing basketball, lifting weights, and reading books!
-            Currently interested in furthering my knowledge in the field of AI and Web Development.
+            My hobbies are lifting weights, playing basketball and hanging out with friends!
+            Currently interested in space travel, and CS infrastructure.
+            
           </p>
           <div className="grid grid-cols-2 mt-8">
           <img src={family1} className="w-full h-auto object-cover rounded-lg" alt="Family photo" />
