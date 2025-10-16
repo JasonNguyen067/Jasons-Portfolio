@@ -54,7 +54,7 @@ function Header() {
       </h1>
       <h2 className="text-m mt-2 font-normal">
         <Typewriter
-          words={['Software Engineer', 'First Year Computer Science and Engineering Student at UC Irvine']}
+          words={['Software Engineer', 'Third Year Computer Science Student at UC Irvine']}
           loop={1}
           cursor
           cursorStyle="|"
