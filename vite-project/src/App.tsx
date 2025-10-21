@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import linkedin1 from './assets/linkedin1.png';
 import github from './assets/github.png';
 import './App.css';
@@ -16,6 +15,7 @@ import friends from './assets/friends.png';
 import roommates from './assets/roommates.png';
 import gaspredictor from './assets/gaspredictor.png';
 import portfolio from './assets/portfolio.png';
+import { ModalButton } from './components/ModalButton';
 // Social Links Component
 function SocialLinks() {
   return (
@@ -66,46 +66,8 @@ function Header() {
   );
 }
 
-// Button Group Component
-interface ButtonGroupProps {
-  title: string;
-  modalContent: React.ReactNode;
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-function ButtonGroup({ title, modalContent, isOpen, setIsOpen }: ButtonGroupProps) {
-  return (
-    <div className="flex flex-col w-[400px]">
-      {/* Button */}
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full px-6 py-2 rounded-xl text-black bg-zinc-900 hover:bg-yellow-500 transition duration-200 ease-in-out shadow-lg shadow-yellow-500/50 font-bold border-none"
-      >
-        <span>{title}</span>
-      </button>
-
-      {/* Modal */}
-      <div className="text-white w-full">
-        {isOpen ? (
-          <div className="bg-gray-300 text-white rounded-b-xl shadow-lg transform transition-all ease-in-out">
-            {modalContent}
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
 // Main App Component
 function App() {
-  const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
-  const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
-  const [isThirdModalOpen, setIsThirdModalOpen] = useState(false);
-  const [isFourthModalOpen, setIsFourthModalOpen] = useState(false);
-  const [isFifthModalOpen, setIsFifthModalOpen] = useState(false);
-  const [isSixthModalOpen, setIsSixthModalOpen] = useState(false);
-  const [isSeventhModalOpen, setIsSeventhModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen w-full relative">
@@ -126,8 +88,8 @@ function App() {
 
           {/* Buttons and Hover Content */}
           <div className="relative mt-20 grid grid-cols-2 gap-8 w-[800px] mx-auto mb-20">
-            {/* First Button Group */}
-            <ButtonGroup
+            {/* First Button */}
+            <ModalButton
               title="Stellarship!👍"
               modalContent={
                 <div className="p-4 flex flex-col items-center h-[400px]">
@@ -153,12 +115,10 @@ function App() {
                   </div>
                 </div>
               }
-              isOpen={isFirstModalOpen}
-              setIsOpen={setIsFirstModalOpen}
             />
 
-            {/* Second Button Group */}
-            <ButtonGroup
+            {/* Second Button */}
+            <ModalButton
               title="Cinemaker!🎬"
               modalContent={
                 <div className="p-4 flex flex-col items-center h-[400px]">
@@ -183,12 +143,10 @@ function App() {
                   </div>
                 </div>
               }
-              isOpen={isSecondModalOpen}
-              setIsOpen={setIsSecondModalOpen}
             />
 
-            {/* Third Button Group */}
-            <ButtonGroup
+            {/* Third Button */}
+            <ModalButton
               title="Laundry Tracker!🧺"
               modalContent={
                 <div className="p-4 flex flex-col items-center h-[400px]">
@@ -211,12 +169,10 @@ function App() {
                   </div>
                 </div>
               }
-              isOpen={isThirdModalOpen}
-              setIsOpen={setIsThirdModalOpen}
             />
 
-            {/* Fourth Button Group */}
-            <ButtonGroup
+            {/* Fourth Button */}
+            <ModalButton
               title="Gas Price Predictor!⛽"
               modalContent={
                 <div className="p-4 flex flex-col items-center h-[400px]">
@@ -240,14 +196,10 @@ function App() {
                   </div>
                 </div>
               }
-              isOpen={isFourthModalOpen}
-              setIsOpen={setIsFourthModalOpen}
             />
-          </div>
 
-          {/* Fifth Button Group */}
-          <div className="col-span-2 flex justify-center">
-            <ButtonGroup
+            {/* Fifth Button */}
+            <ModalButton
               title="Portfolio Website!🌐"
               modalContent={
                 <div className="p-4 flex flex-col items-center h-[400px]">
@@ -269,70 +221,9 @@ function App() {
                   </div>
                 </div>
               }
-              isOpen={isFifthModalOpen}
-              setIsOpen={setIsFifthModalOpen}
             />
           </div>
         </div>
-
-        {/* Sixth Button Group */}
-        <div className="col-span-2 flex justify-center">
-          <ButtonGroup
-            title="Portfolio Website!🌐"
-            modalContent={
-              <div className="p-4 flex flex-col items-center h-[400px]">
-                <div className="bg-gray-500 text-gray-300 px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">Personal Project</div>
-                <a
-                  href="https://github.com/JasonNguyen067/Jasons-Portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mb-4"
-                >
-                  <img src={portfolio} className="logo h-64 mx-auto object-contain" alt="Portfolio website logo" />
-                </a>
-                <p className="text-sm text-gray-300 mb-2">My personal portfolio website showcasing my projects and skills.</p>
-                <div className="flex flex-wrap gap-2">
-                  <p className="text-sm text-gray-500 mb-2">First ever personal website! Built with React, Tailwind and Typescript</p>
-                  <span className="px-2 py-1 bg-gray-500 rounded text-xs">React</span>
-                  <span className="px-2 py-1 bg-gray-500 rounded text-xs">TypeScript</span>
-                  <span className="px-2 py-1 bg-gray-500 rounded text-xs">Tailwind</span>
-                </div>
-              </div>
-            }
-            isOpen={isSixthModalOpen}
-            setIsOpen={setIsSixthModalOpen}
-          />
-        </div>
-      
-
-        {/* Seventh Button Group */}
-          <div className="col-span-2 flex justify-center">
-            <ButtonGroup
-              title="Portfolio Website!🌐"
-              modalContent={
-                <div className="p-4 flex flex-col items-center h-[400px]">
-                  <div className="bg-gray-500 text-gray-300 px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">Personal Project</div>
-                  <a
-                    href="https://github.com/JasonNguyen067/Jasons-Portfolio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mb-4"
-                  >
-                    <img src={portfolio} className="logo h-64 mx-auto object-contain" alt="Portfolio website logo" />
-                  </a>
-                  <p className="text-sm text-gray-300 mb-2">My personal portfolio website showcasing my projects and skills.</p>
-                  <div className="flex flex-wrap gap-2">
-                    <p className="text-sm text-gray-500 mb-2">First ever personal website! Built with React, Tailwind and Typescript</p>
-                    <span className="px-2 py-1 bg-gray-500 rounded text-xs">React</span>
-                    <span className="px-2 py-1 bg-gray-500 rounded text-xs">TypeScript</span>
-                    <span className="px-2 py-1 bg-gray-500 rounded text-xs">Tailwind</span>
-                  </div>
-                </div>
-              }
-              isOpen={isSeventhModalOpen}
-              setIsOpen={setIsSeventhModalOpen}
-            />
-          </div>
 
 
         {/* About Me Section */}
