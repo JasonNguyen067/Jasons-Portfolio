@@ -15,6 +15,7 @@ import friends from './assets/friends.png';
 import roommates from './assets/roommates.png';
 import gaspredictor from './assets/gaspredictor.png';
 import portfolio from './assets/portfolio.png';
+import designwin from './assets/designwin.png';
 import { ModalButton } from './components/ModalButton';
 // Social Links Component
 function SocialLinks() {
@@ -222,6 +223,31 @@ function App() {
                 </div>
               }
             />
+
+            {/* Sixth Button */}
+            <ModalButton
+              title="Portfolio Website!🌐"
+              modalContent={
+                <div className="p-4 flex flex-col items-center h-[400px]">
+                  <div className="bg-gray-500 text-gray-300 px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">Personal Project</div>
+                  <a
+                    href="https://github.com/JasonNguyen067/Jasons-Portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mb-4"
+                  >
+                    <img src={portfolio} className="logo h-64 mx-auto object-contain" alt="Portfolio website logo" />
+                  </a>
+                  <p className="text-sm text-gray-300 mb-2">My personal portfolio website showcasing my projects and skills.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <p className="text-sm text-gray-500 mb-2">First ever personal website! Built with React, Tailwind and Typescript</p>
+                    <span className="px-2 py-1 bg-gray-500 rounded text-xs">React</span>
+                    <span className="px-2 py-1 bg-gray-500 rounded text-xs">TypeScript</span>
+                    <span className="px-2 py-1 bg-gray-500 rounded text-xs">Tailwind</span>
+                  </div>
+                </div>
+              }
+            />
           </div>
         </div>
 
@@ -243,6 +269,15 @@ function App() {
         </div>
 
         {/* Experiences */}
+        <div className="text-center w-full max-w-[600px] mx-auto mt-400">
+          <p>Experiences</p>
+          <h2 className="text-3xl font-bold mb-8 mt-64">Design@UCI</h2>
+          <img src={designwin} className="grid grid-col justify-center items-center w-full h-auto object-cover rounded-lg"/>
+          <p>2nd Place Infront of Industry Panel</p>
+          <p>1st Place Audience Choice's Overall Award</p>
+        </div>
+
+        {/* Books */}
         <div className="text-center w-full max-w-[600px] mx-auto mt-400">
           <h2 className="text-3xl font-bold mb-8">My favorite books!</h2>
           <div className="grid grid-cols-2">
